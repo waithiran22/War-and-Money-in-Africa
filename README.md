@@ -1,5 +1,5 @@
 # War and Money in Africa
-Analysis of Economic Indicators and Conflict Events in Africa. In this project, we analyzed the relationship between economic indicators and conflict events in African countries from 1997 to 2018. We focused on a representative sample of three countries from each major region in Africa to maintain a manageable scope while ensuring diversity. The countries were chosen based on their geopolitical significance and availability of comprehensive data. Data was sourced from Kaggle datasets: "Political Conflicts in Africa from 1997-2018" by Roberto Berwa and "African Economy from 1980 to 2022" by MahmoudSaeed.
+Analysis of Economic Indicators and Conflict Events in Africa. In this project, I analyzed the relationship between economic indicators and conflict events in African countries from 1997 to 2018. I focused on a representative sample of three countries from each major region in Africa to maintain a manageable scope while ensuring diversity. The countries were chosen based on their geopolitical significance and availability of comprehensive data. Data was sourced from Kaggle datasets: "Political Conflicts in Africa from 1997-2018" by Roberto Berwa and "African Economy from 1980 to 2022" by MahmoudSaeed.
 
 ## Load and Clean Data
 ```
