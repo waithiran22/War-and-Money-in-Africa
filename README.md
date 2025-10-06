@@ -1,11 +1,12 @@
+![Banner](https://github.com/waithiran22/War-and-Money-in-Africa/blob/main/images/banner-war.jpg?raw=true)
+
+
 ![R](https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white)
 ![Shiny](https://img.shields.io/badge/Shiny-2A50A1?logo=rstudio&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 # War and Money in Africa  
 *Analyzing the Relationship Between Economic Indicators and Conflict Events (1997–2018)*  
-
-![Project Overview](images/overview.png)
 
 ---
 
