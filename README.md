@@ -77,9 +77,11 @@ Built using **R, Shiny, ggplot2, and Leaflet**, the dashboard provides both stat
 #### Correlation Heatmap
 We computed correlations between year, conflict fatalities, and conflict events:
 
-![Correlation Heatmap](correlation_matrix.png)
+![Correlation Heatmap](Correlation_Matrix.png)
 
 **Key Insight:** While both events and fatalities have trended upward with time, the direct correlation between events and fatalities is surprisingly weak, highlighting different types of conflict dynamics across regions.
+
+---
 
 #### Regression Analysis
 We ran a simple regression to test whether the number of conflict events predicts fatalities:
