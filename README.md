@@ -1,101 +1,123 @@
-![Banner](https://github.com/waithiran22/War-and-Money-in-Africa/blob/main/images/banner-war.jpg?raw=true)
-
-
-![R](https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white)
-![Shiny](https://img.shields.io/badge/Shiny-2A50A1?logo=rstudio&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+<p align="center">
+  <img src="banner.png" alt="War and Money in Africa Banner" width="100%">
+</p>
 
 # War and Money in Africa  
 *Analyzing the Relationship Between Economic Indicators and Conflict Events (1997–2018)*  
 
 ---
 
-## 📌 Project Overview
-This project explores the relationship between **economic indicators** and **conflict events** across African regions between **1997 and 2018**. Using Kaggle datasets, I developed an **interactive Shiny dashboard** to visualize how GDP growth, inflation, and regional conflict patterns overlap.  
+##  Overview
+Conflict and economic instability are deeply intertwined across Africa.  
+This project investigates how macroeconomic indicators (GDP growth, inflation) correlate with **conflict events and fatalities** across five regions of Africa between **1997–2018**.  
 
-The motivation for this research is to understand how economic stability—or lack thereof—relates to the frequency and severity of conflict across African nations.  
-
----
-
-## 📊 Data Sources
-- **Conflicts Dataset:** [Political Conflicts in Africa (1997–2018)](https://www.kaggle.com/datasets/robertoberwa/conflicts-in-africa-from-19972018) by Roberto Berwa  
-- **Economic Dataset:** [African Economy (1980–2022)](https://www.kaggle.com/datasets/mahmoudsaeed99/african-economy-from-1980-to-2022) by Mahmoud Saeed  
-
-Both datasets were cleaned and harmonized (standardized country names, handled missing values, assigned regions, aggregated by **decade**).
+Built using **R, Shiny, ggplot2, and Leaflet**, the dashboard provides both statistical and geospatial perspectives, making it a tool for **policy analysts, researchers, and economists** seeking to understand the dynamics of development and instability.
 
 ---
 
-## ⚙️ Methodology
-- **Data Cleaning:**  
-  - Replaced empty strings with NA  
-  - Removed duplicates and missing values  
-  - Standardized country names and grouped into regions  
-- **Aggregation:**  
-  - Summarized conflicts by **region & decade**  
-  - Calculated average GDP growth and inflation by **region & decade**  
-- **Visualization:**  
-  - Plots created using `ggplot2`  
-  - Interactive maps built with `leaflet`  
-  - Deployed as a multi-tab Shiny app  
+## Dashboard Preview
+
+###  Project Overview
+![Overview](Front.png)  
+*Landing page of the Shiny app summarizing scope and motivation.*
 
 ---
 
-## 📈 Key Visualizations
-
-### Total Conflict Fatalities
-![Fatalities](images/fatalities.png)  
-Fatalities rose sharply in **East Africa** post-2000, while **West Africa** and **Central Africa** also saw significant increases by the 2010s.
-
----
-
-### Total Conflict Events
-![Events](images/events.png)  
-East and West Africa experienced the largest growth in recorded events, with **East Africa peaking after 2010**.
+###  Conflict Fatalities
+![Fatalities](Fatalities.png)  
+ **Insight:** East Africa consistently recorded the highest fatalities, peaking in the 2000s–2010s, while Central and West Africa also saw sharp increases.  
+ Suggests localized drivers (civil wars, insurgencies) intensified despite broader economic growth in some regions.
 
 ---
 
-### GDP Growth Trends
-![GDP Growth](images/gdp_growth.png)  
-Regions with relatively strong economic performance (e.g., **East Africa**) still experienced high conflict activity, highlighting a **paradox between growth and stability**.
+###  Conflict Events
+![Events](Total_Region_And_Decade.png)  
+ **Insight:** The number of conflict events rose in almost all regions after 2000, particularly in East and West Africa.  
+ More events do not always mean higher fatalities, but they reflect widening instability and reporting improvements.
 
 ---
 
-### Inflation Trends
-![Inflation](images/inflation.png)  
-Economic volatility is evident in **East and West Africa**, where inflation spikes often aligned with higher conflict intensity.
+###  GDP Growth
+![GDP Growth](GPD_By_Region_And_Decade.png)  
+ **Insight:** East Africa maintained strong GDP growth (>4% average), yet simultaneously experienced rising conflict fatalities.  
+ This paradox highlights that **growth alone does not guarantee stability** — institutional quality, governance, and inequality matter.
 
 ---
 
-### Correlations
-- **GDP Growth vs Conflict Fatalities**  
-  ![GDP vs Conflicts](images/gdp_conflict.png)  
-  East Africa shows a **positive correlation** (growth coincides with conflict), while West Africa trends negative.
-
-- **Inflation vs Conflict Events**  
-  ![Inflation vs Conflicts](images/inflation_conflict.png)  
-  Higher inflation rates correlate with more conflict events in several regions.
+###  Inflation
+![Inflation](Inflation_By_Region_And_Decade.png)  
+ **Insight:** Inflation volatility in West Africa aligns with spikes in conflict activity.  
+ Suggests **economic shocks and price instability** can exacerbate unrest by increasing living costs and weakening state capacity.
 
 ---
 
-### Geospatial Mapping
-![Map](images/map.png)  
-An interactive **Leaflet map** visualizing conflict locations by region and severity.  
+###  Correlations
+
+**GDP Growth vs Conflict Fatalities**  
+![GDP vs Conflicts](GPD_And_Conflict.png)  
+ Regions like East Africa show a weak or positive correlation — economic growth coincided with high fatalities.  
+ Reinforces the idea that growth without inclusive institutions may not reduce violence.  
+
+**Inflation vs Conflict Events**  
+![Inflation vs Conflicts](Inflation_And_Conflict.png)  
+ Stronger positive correlation: higher inflation is associated with more recorded conflict events.  
+ Suggests inflation shocks may directly fuel unrest, protests, and instability.
 
 ---
 
-## 🔍 Key Insights
-- **East Africa**: Strong GDP growth but highest conflict fatalities → economic growth does not guarantee peace.  
-- **West Africa**: Inflation and conflict tightly linked → economic instability as a conflict driver.  
-- **North Africa**: Moderate inflation, but spikes coincide with conflict surges (e.g., Arab Spring).  
-- **South Africa**: Relatively stable, but still affected by regional shocks.  
+###  Geospatial Mapping
+![Map](Geospatial.png)  
+ Interactive Leaflet visualization plots average fatalities per region.  
+ Provides **spatial context**, showing clustering of instability in East and West Africa compared to relative stability in Southern Africa.
 
 ---
 
-## 🚀 Running the Shiny App
-Clone the repo and run:
+###  Advanced Analysis
 
+#### Correlation Heatmap
+We computed correlations between year, conflict fatalities, and conflict events:
+
+![Correlation Heatmap](correlation_matrix.png)
+
+**Key Insight:** While both events and fatalities have trended upward with time, the direct correlation between events and fatalities is surprisingly weak, highlighting different types of conflict dynamics across regions.
+
+#### Regression Analysis
+We ran a simple regression to test whether the number of conflict events predicts fatalities:
+
+Fatalities = β₀ + β₁ * Events
+R² = 0.02, β₁ ≈ +1.8 (p ≈ 0.12)
+
+**Key Insight:** The low R² shows that conflict frequency alone doesn’t explain the severity of violence — economic and institutional factors may be stronger predictors.
+
+##  Key Takeaways
+- **Economic growth ≠ peace** → East Africa’s growth occurred alongside persistent conflict.  
+- **Inflation shocks are conflict multipliers** → West Africa demonstrates volatility feeding instability.  
+- **Regional diversity** → Stability in Southern Africa contrasts with recurring unrest in Central Africa.  
+- **Policy implication** → Growth policies should be paired with **institutional strengthening, conflict prevention, and inclusive development.**
+
+---
+
+##  Methods & Tools
+- **Data Sources**:  
+  - [Political Conflicts in Africa (1997–2018)](https://www.kaggle.com/datasets/robertoberwa/conflicts-in-africa-from-19972018)  
+  - [African Economy (1980–2022)](https://www.kaggle.com/datasets/mahmoudsaeed99/african-economy-from-1980-to-2022)  
+
+- **Processing & Analysis:**  
+  - Cleaned with `dplyr`, standardized country names with `stringr`  
+  - Aggregated by **region & decade**  
+  - Derived summary datasets for GDP growth, inflation, conflict events, and fatalities  
+
+- **Visualization & App Development:**  
+  - Statistical plots via **ggplot2**  
+  - Geospatial plots via **Leaflet**  
+  - Interactive app built with **Shiny**
+
+---
+
+##  How to Run the Dashboard
+Clone repo and launch app locally:
 ```r
-# Install required packages
+# Install dependencies
 install.packages(c("shiny", "ggplot2", "leaflet", "dplyr", "readxl", "stringr"))
 
 # Run the app
